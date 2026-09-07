@@ -1,7 +1,7 @@
-﻿//  -*-  coding: utf-8-with-signature  -*-  //
+﻿//  -*-  coding: utf-8-with-signature-unix;    -*-  //
 /*************************************************************************
 **                                                                      **
-**                  ---  WPF UserControl Library.  ---                  **
+**                  ----   WPF  Helper  Library   ----                  **
 **                                                                      **
 **          Copyright (C), 2026-2026, Takahiro Itou                     **
 **          All Rights Reserved.                                        **
@@ -16,8 +16,7 @@ using   System.Windows.Controls;
 using   System.Windows.Controls.Primitives;
 
 
-namespace  WpfControl.Common  {
-
+namespace  WpfHelper.Controls  {
 
 //========================================================================
 //
@@ -299,6 +298,6 @@ private   System.Windows.Point  m_scrollOffset;
 
 private   ScrollViewer?         m_scrollOwner;
 
-}   //  End class  AbstractScrollInfo
+}   //  End class  ScrollFrameworkElementBase
 
-}   //  End of namespace  WpfControl.Common
+}   //  End of namespace  WpfHelper.Controls
