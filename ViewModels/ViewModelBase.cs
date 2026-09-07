@@ -1,9 +1,9 @@
 ﻿//  -*-  coding: utf-8-with-signature-unix     -*-  //
 /*************************************************************************
 **                                                                      **
-**                  ---  Baseball  Score  Project  ---                  **
+**                  ----   WPF  Helper  Library   ----                  **
 **                                                                      **
-**          Copyright (C), 2017-2026, Takahiro Itou                     **
+**          Copyright (C), 2026-2026, Takahiro Itou                     **
 **          All Rights Reserved.                                        **
 **                                                                      **
 **          License: (See COPYING or LICENSE files)                     **
@@ -12,14 +12,14 @@
 **                                                                      **
 *************************************************************************/
 
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Windows.Input;
+using   System.ComponentModel;
+using   System.Runtime.CompilerServices;
+using   System.Windows.Input;
 
-using WpfControl.Common;
+using   WpfControl.Common;
 
 
-namespace  BaseballScoreHelper.ViewModels  {
+namespace  WpfHelper.ViewModels  {
 
 public  class  ViewModelBase : INotifyPropertyChanged
 {
@@ -33,6 +33,7 @@ public  class  ViewModelBase : INotifyPropertyChanged
 /**   コンストラクタ。
 **
 **/
+
 public
 ViewModelBase()
 {
@@ -48,6 +49,7 @@ ViewModelBase()
 /**
 **
 **/
+
 public  event PropertyChangedEventHandler?  PropertyChanged;
 
 
@@ -60,6 +62,7 @@ public  event PropertyChangedEventHandler?  PropertyChanged;
 /**
 **
 **/
+
 protected  virtual  INotifyCanExecuteChanged
 getCommand(
         ICommand  command,
@@ -78,6 +81,7 @@ getCommand(
 /**
 **
 **/
+
 protected  virtual  void
 raisePropertyChanged(
         [CallerMemberName]  System.String?  propertyName = null)
@@ -87,6 +91,6 @@ raisePropertyChanged(
 }
 
 
-}   //  End class  ViewModelBase
+}   //  End of class  ViewModelBase
 
-}   //  End of namespace  BaseballScoreHelper.ViewModels
+}   //  End of namespace  WpfHelper.ViewModels
