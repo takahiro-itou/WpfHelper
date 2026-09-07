@@ -64,6 +64,17 @@ public  event   PropertyChangedEventHandler?    PropertyChanged;
 **
 **/
 
+protected  virtual  void
+checkCommandsCanExecute(
+        System.String?  propertyName)
+{
+}
+
+//----------------------------------------------------------------
+/**
+**
+**/
+
 protected  virtual  INotifyCanExecuteChanged
 getCommand(
         ICommand  command,
@@ -104,6 +115,7 @@ raisePropertyChanged(
 {
     PropertyChanged?.Invoke(
             this, new PropertyChangedEventArgs(propertyName));
+    checkCommandsCanExecute(propertyName);
 }
 
 
