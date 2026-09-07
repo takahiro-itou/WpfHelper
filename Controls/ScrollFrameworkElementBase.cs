@@ -298,6 +298,6 @@ private   System.Windows.Point  m_scrollOffset;
 
 private   ScrollViewer?         m_scrollOwner;
 
-}   //  End class  ScrollFrameworkElementBase
+}   //  End of class  ScrollFrameworkElementBase
 
 }   //  End of namespace  WpfHelper.Controls
