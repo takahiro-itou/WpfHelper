@@ -1,7 +1,7 @@
-﻿//  -*-  coding: utf-8-with-signature  -*-  //
+﻿//  -*-  coding: utf-8-with-signature-unix;    -*-  //
 /*************************************************************************
 **                                                                      **
-**                  ---  WPF UserControl Library.  ---                  **
+**                  ----   WPF  Helper  Library   ----                  **
 **                                                                      **
 **          Copyright (C), 2026-2026, Takahiro Itou                     **
 **          All Rights Reserved.                                        **
@@ -16,8 +16,7 @@ using System.ComponentModel;
 using System.Windows.Input;
 
 
-namespace  WpfControl.Common  {
-
+namespace  WpfHelper.Commands  {
 
 //========================================================================
 //
@@ -128,4 +127,4 @@ private  static     TypeConverter
 
 }   //  End class  SimpleCommand<T>
 
-}   //  End of namespace  WpfControl.Common
+}   //  End of namespace  WpfHelper.Commands
