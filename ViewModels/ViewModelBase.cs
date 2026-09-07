@@ -50,7 +50,8 @@ ViewModelBase()
 **
 **/
 
-public  event PropertyChangedEventHandler?  PropertyChanged;
+public  event   PropertyChangedEventHandler?    PropertyChanged;
+
 
 
 //========================================================================
@@ -73,9 +74,24 @@ getCommand(
     }
 
     throw new ArgumentException(
-        $"指定されたコマンドは {nameof(INotifyCanExecuteChanged)} を実装していません。プロパティ名: {paramName}",
+        $"指定されたコマンドは {nameof(INotifyCanExecuteChanged)} を"
+        + $"実装していません。プロパティ名: {paramName}",
         paramName);
 }
+
+//----------------------------------------------------------------
+/**
+**
+**/
+
+protected  virtual  void
+raiseCanExecuteChanged(
+        ICommand  command,
+        [CallerArgumentExpression("command")] string  paramName = "")
+{
+    getCommand(command, paramName).raiseCanExecuteChanged();
+}
+
 
 //----------------------------------------------------------------
 /**
