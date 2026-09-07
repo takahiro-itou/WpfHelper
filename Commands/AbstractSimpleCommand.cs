@@ -1,7 +1,7 @@
 ﻿//  -*-  coding: utf-8-with-signature  -*-  //
 /*************************************************************************
 **                                                                      **
-**                  ---  WPF UserControl Library.  ---                  **
+**                  ----   WPF  Helper  Library   ----                  **
 **                                                                      **
 **          Copyright (C), 2026-2026, Takahiro Itou                     **
 **          All Rights Reserved.                                        **
@@ -18,7 +18,7 @@ using System.Windows.Input;
 using ExecPred = System.Predicate<object?>;
 
 
-namespace  WpfControl.Common  {
+namespace  WpfHelper.Commands  {
 
 //========================================================================
 //
@@ -120,4 +120,4 @@ private   readonly  ExecPred?   m_canExec;
 
 }   //  End class  AbstractSimpleCommand
 
-}   //  End of namespace  WpfControl.Common
+}   //  End of namespace  WpfHelper.Commands
