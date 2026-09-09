@@ -2,7 +2,15 @@
 <Project>
 
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)**\*.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands/AbstractSimpleCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands/INotifyCanExecuteChanged.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands/SimpleCommand.cs" />
+
+    <Compile Include="$(MSBuildThisFileDirectory)Controls/ScrollFrameworkElementBase.cs" />
+
+    <Compile Include="$(MSBuildThisFileDirectory)Data/IntToBoolConverter.cs" />
+
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels/ViewModelBase.cs" />
   </ItemGroup>
 
 </Project>
