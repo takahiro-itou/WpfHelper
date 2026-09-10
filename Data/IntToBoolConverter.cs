@@ -67,7 +67,13 @@ ConvertBack(
         CultureInfo culture)
 {
     if ( value is bool boolValue && boolValue && parameter != null ) {
-        return  int.Parse(parameter.ToString());
+        if ( int.TryParse(parameter.ToString() ?? "", out int paramValue) )
+        {
+            return ( paramValue );
+        } else {
+            //  パース失敗時のエラーハンドリング。  //
+            return ( System.Windows.Data.Binding.DoNothing );
+        }
     }
 
     return ( System.Windows.Data.Binding.DoNothing );
