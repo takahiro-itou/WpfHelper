@@ -40,8 +40,13 @@ Convert(
         CultureInfo culture)
 {
     if ( value is int intValue && parameter != null ) {
-        int paramValue = int.Parse(parameter.ToString());
-        return ( intValue == paramValue );
+        if ( int.TryParse(parameter.ToString() ?? "", out int paramValue) )
+        {
+            return ( intValue == paramValue );
+        } else {
+            //  パース失敗時のエラーハンドリング。  //
+            return ( false );
+        }
     }
     return ( false );
 }
@@ -62,7 +67,13 @@ ConvertBack(
         CultureInfo culture)
 {
     if ( value is bool boolValue && boolValue && parameter != null ) {
-        return  int.Parse(parameter.ToString());
+        if ( int.TryParse(parameter.ToString() ?? "", out int paramValue) )
+        {
+            return ( paramValue );
+        } else {
+            //  パース失敗時のエラーハンドリング。  //
+            return ( System.Windows.Data.Binding.DoNothing );
+        }
     }
 
     return ( System.Windows.Data.Binding.DoNothing );
