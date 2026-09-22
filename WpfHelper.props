@@ -13,6 +13,7 @@
     <Compile Include="$(WpHpThisDir)Controls/ScrollFrameworkElementBase.cs" />
 
     <Compile Include="$(WpHpThisDir)Data/BindableBase.cs" />
+    <Compile Include="$(WpHpThisDir)Data/ColorToBrushConverter.cs" />
     <Compile Include="$(WpHpThisDir)Data/IntToBoolConverter.cs" />
 
     <Compile Include="$(WpHpThisDir)Utils/NotifyPropertyChangedBase.cs" />
