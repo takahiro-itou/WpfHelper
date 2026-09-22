@@ -15,6 +15,8 @@
 using   System.ComponentModel;
 using   System.Runtime.CompilerServices;
 
+using   WpfHelper.Utils;
+
 
 namespace  WpfHelper.Data  {
 
@@ -23,20 +25,8 @@ namespace  WpfHelper.Data  {
 //    BindableBase  class
 //
 
-public  class  BindableBae : INotifyPropertyChanged
+public  class  BindableBase : NotifyPropertyChangedBase
 {
-
-//========================================================================
-//
-//    Properties.
-//
-
-//----------------------------------------------------------------
-/**   プロパティが変化したことを通知するイベント。
-**
-**/
-public  event   PropertyChangedEventHandler?    PropertyChanged;
-
 
 //========================================================================
 //
@@ -44,15 +34,20 @@ public  event   PropertyChangedEventHandler?    PropertyChanged;
 //
 
 //----------------------------------------------------------------
-/**   プロパティの変更通知イベントを発火させる。
+/**   プロパティの値をセットし変更を通知する。
 **
 **/
-protected  virtual  void
-raisePropertyChanged(
-        [CallerMemberName]  System.String?  propertyName = null)
+protected  void
+SetValue<T>(
+    ref  T  fieldVar,
+    T       value,
+    [CallerMemberName]  System.String?  propertyName = null)
 {
-    PropertyChanged?.Invoke(
-            this, new PropertyChangedEventArgs(propertyName));
+    if ( EqualityComparer<T>.Default.Equals(fieldVar, value)) {
+        return;
+    }
+    fieldVar = value;
+    raisePropertyChanged(propertyName);
 }
 
 
