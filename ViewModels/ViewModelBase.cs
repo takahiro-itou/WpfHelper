@@ -53,7 +53,6 @@ ViewModelBase()
 public  event   PropertyChangedEventHandler?    PropertyChanged;
 
 
-
 //========================================================================
 //
 //    Protected Member Functions.

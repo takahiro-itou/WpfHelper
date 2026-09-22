@@ -26,6 +26,36 @@ namespace  WpfHelper.Data  {
 public  class  BindableBae : INotifyPropertyChanged
 {
 
+//========================================================================
+//
+//    Properties.
+//
+
+//----------------------------------------------------------------
+/**   プロパティが変化したことを通知するイベント。
+**
+**/
+public  event   PropertyChangedEventHandler?    PropertyChanged;
+
+
+//========================================================================
+//
+//    Protected Member Functions.
+//
+
+//----------------------------------------------------------------
+/**   プロパティの変更通知イベントを発火させる。
+**
+**/
+protected  virtual  void
+raisePropertyChanged(
+        [CallerMemberName]  System.String?  propertyName = null)
+{
+    PropertyChanged?.Invoke(
+            this, new PropertyChangedEventArgs(propertyName));
+}
+
+
 }   //  End of class  BindableBase
 
 }   //  End of namespace  WpfHelper.Data
