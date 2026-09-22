@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
 
-  <Target Name="WpfHelperAddFiles" BeforeTargets="BeforeCompile">
-    <PropertyGroup>
-      <WhThisDir>$(MSBuildThisFileDirectory)</WhThisDir>
-    </PropertyGroup>
+  <PropertyGroup>
+    <WpHpThisDir>$(MSBuildThisFileDirectory)</WhThisDir>
+  </PropertyGroup>
 
-    <ItemGroup>
-      <Compile Include="$(WhThisDir)Commands/AbstractSimpleCommand.cs" />
-      <Compile Include="$(WhThisDir)Commands/INotifyCanExecuteChanged.cs" />
-      <Compile Include="$(WhThisDir)Commands/SimpleCommand.cs" />
+  <ItemGroup>
+    <Compile Include="$(WpHpThisDir)Commands/AbstractSimpleCommand.cs" />
+    <Compile Include="$(WpHpThisDir)Commands/INotifyCanExecuteChanged.cs" />
+    <Compile Include="$(WpHpThisDir)Commands/SimpleCommand.cs" />
 
-      <Compile Include="$(WhThisDir)Controls/ScrollFrameworkElementBase.cs" />
+    <Compile Include="$(WpHpThisDir)Controls/ScrollFrameworkElementBase.cs" />
 
-      <Compile Include="$(WhThisDir)Data/BindableBase.cs" />
-      <Compile Include="$(WhThisDir)Data/IntToBoolConverter.cs" />
+    <Compile Include="$(WpHpThisDir)Data/BindableBase.cs" />
+    <Compile Include="$(WpHpThisDir)Data/IntToBoolConverter.cs" />
 
-      <Compile Include="$(WhThisDir)ViewModels/ViewModelBase.cs" />
-    </ItemGroup>
-  </Target>
+    <Compile Include="$(WpHpThisDir)ViewModels/ViewModelBase.cs" />
+  </ItemGroup>
 
 </Project>
