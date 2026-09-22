@@ -15,6 +15,8 @@
     <Compile Include="$(WpHpThisDir)Data/BindableBase.cs" />
     <Compile Include="$(WpHpThisDir)Data/IntToBoolConverter.cs" />
 
+    <Compile Include="$(WpHpThisDir)Utils/NotifyPropertyChangedBase.cs" />
+
     <Compile Include="$(WpHpThisDir)ViewModels/ViewModelBase.cs" />
   </ItemGroup>
 
