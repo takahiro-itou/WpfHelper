@@ -34,7 +34,7 @@ public  static  class  BrushCache
 public  static  SolidColorBrush
 getBrush(Color  color)
 {
-    return  this.m_cache.GetOrAdd(color, c =>
+    return  s_cache.GetOrAdd(color, c =>
         {
             SolidColorBrush brush = new SolidColorBrush(c);
             if ( brush.CanFreeze ) {
@@ -52,7 +52,7 @@ getBrush(Color  color)
 
 /**   キャッシュ。  **/
 private   static  readonly
-ConcurrentDictionary<Color, SolidColorBrush>    m_cache = new();
+ConcurrentDictionary<Color, SolidColorBrush>    s_cache = new();
 
 
 }   //  End of class  BrushCache
