@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
 
+  <PropertyGroup>
+    <WpHpThisDir>$(MSBuildThisFileDirectory)</WpHpThisDir>
+  </PropertyGroup>
+
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Commands/AbstractSimpleCommand.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Commands/INotifyCanExecuteChanged.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Commands/SimpleCommand.cs" />
+    <Compile Include="$(WpHpThisDir)Commands/AbstractSimpleCommand.cs" />
+    <Compile Include="$(WpHpThisDir)Commands/INotifyCanExecuteChanged.cs" />
+    <Compile Include="$(WpHpThisDir)Commands/SimpleCommand.cs" />
 
-    <Compile Include="$(MSBuildThisFileDirectory)Controls/ScrollFrameworkElementBase.cs" />
+    <Compile Include="$(WpHpThisDir)Controls/ScrollFrameworkElementBase.cs" />
 
-    <Compile Include="$(MSBuildThisFileDirectory)Data/IntToBoolConverter.cs" />
+    <Compile Include="$(WpHpThisDir)Data/BindableBase.cs" />
+    <Compile Include="$(WpHpThisDir)Data/ColorToBrushConverter.cs" />
+    <Compile Include="$(WpHpThisDir)Data/IntToBoolConverter.cs" />
 
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels/ViewModelBase.cs" />
+    <Compile Include="$(WpHpThisDir)Utils/BrushCache.cs" />
+    <Compile Include="$(WpHpThisDir)Utils/NotifyPropertyChangedBase.cs" />
+
+    <Compile Include="$(WpHpThisDir)ViewModels/ViewModelBase.cs" />
   </ItemGroup>
 
 </Project>
