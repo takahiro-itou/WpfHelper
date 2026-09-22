@@ -12,56 +12,18 @@
 **                                                                      **
 *************************************************************************/
 
-using   System.Globalization;
-using   System.Windows.Data;
+using   System.Collections.Concurrent;
 using   System.Windows.Media;
 
 
-namespace  WpfHelper.Data  {
+namespace  WpfHelper.Utils  {
 
 //========================================================================
 //
-//    ColorToBrushConverter  class
+//    BrushCache  class
 //
 
-[ValueConversion(typeof(int), typeof(bool))]
-public  class  ColorToBrushConverter : IValueConverter
-{
 
-//----------------------------------------------------------------
-/**   カラーをブラシに変換する。
-**
-**/
-public  object
-Convert(
-        object      value,
-        Type        targetType,
-        object      parameter,
-        CultureInfo culture)
-{
-    if ( value is Color Color ) {
-    }
+}   //  End of class  BrushCache
 
-    //  色が指定されていない場合のデフォルト。  //
-    return  Brushes.Transparent;
-}
-
-
-//----------------------------------------------------------------
-/**
-**
-**/
-public  object
-ConvertBack(
-        object      value,
-        Type        targetType,
-        object      parameter,
-        CultureInfo culture)
-{
-    throw  new NotImplementedException();
-}
-
-
-}   //  End of class  ColorToBrushConverter
-
-}   //  End of namespace  WpfHelper.Data
+}   //  End of namespace  WpfHelper.Utils
