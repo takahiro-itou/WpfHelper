@@ -8,6 +8,7 @@
 
     <Compile Include="$(MSBuildThisFileDirectory)Controls/ScrollFrameworkElementBase.cs" />
 
+    <Compile Include="$(MSBuildThisFileDirectory)Data/BindableBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data/IntToBoolConverter.cs" />
 
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels/ViewModelBase.cs" />
