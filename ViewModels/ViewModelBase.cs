@@ -46,10 +46,9 @@ ViewModelBase()
 //
 
 //----------------------------------------------------------------
-/**
+/**   プロパティが変化したことを通知するイベント。
 **
 **/
-
 public  event   PropertyChangedEventHandler?    PropertyChanged;
 
 
@@ -104,10 +103,9 @@ raiseCanExecuteChanged(
 
 
 //----------------------------------------------------------------
-/**
+/**   プロパティの変更通知イベントを発火させる。
 **
 **/
-
 protected  virtual  void
 raisePropertyChanged(
         [CallerMemberName]  System.String?  propertyName = null)
