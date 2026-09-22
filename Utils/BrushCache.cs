@@ -23,6 +23,37 @@ namespace  WpfHelper.Utils  {
 //    BrushCache  class
 //
 
+public  static  class  BrushCache
+{
+
+//========================================================================
+//
+//    Public Member Functions.
+//
+
+public  static  SolidColorBrush
+getBrush(Color  color)
+{
+    return  this.m_cache.GetOrAdd(color, c =>
+        {
+            SolidColorBrush brush = new SolidColorBrush(c);
+            if ( brush.CanFreeze ) {
+                brush.Freeze();
+            }
+            return ( brush );
+       });
+}
+
+
+//========================================================================
+//
+//    Member Variables.
+//
+
+/**   キャッシュ。  **/
+private   static  readonly
+ConcurrentDictionary<Color, SolidColorBrush>    m_cache = new();
+
 
 }   //  End of class  BrushCache
 
