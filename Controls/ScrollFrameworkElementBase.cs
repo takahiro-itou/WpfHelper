@@ -110,28 +110,28 @@ MouseWheelUp()
 public  virtual  void
 PageDown()
 {
-    double  inc = getPageScrollAmount(ViewportHeight, SmallChangeY);
+    double  inc = GetPageScrollAmount(ViewportHeight, SmallChangeY);
     SetVerticalOffset(this.VerticalOffset + inc);
 }
 
 public  virtual  void
 PageLeft()
 {
-    double  inc = getPageScrollAmount(ViewportWidth, SmallChangeX);
+    double  inc = GetPageScrollAmount(ViewportWidth, SmallChangeX);
     SetHorizontalOffset(this.HorizontalOffset - inc);
 }
 
 public  virtual  void
 PageRight()
 {
-    double  inc = getPageScrollAmount(ViewportWidth, SmallChangeX);
+    double  inc = GetPageScrollAmount(ViewportWidth, SmallChangeX);
     SetHorizontalOffset(this.HorizontalOffset + inc);
 }
 
 public  virtual  void
 PageUp()
 {
-    double  inc = getPageScrollAmount(ViewportHeight, SmallChangeY);
+    double  inc = GetPageScrollAmount(ViewportHeight, SmallChangeY);
     SetVerticalOffset(this.VerticalOffset - inc);
 }
 
@@ -149,7 +149,7 @@ SetHorizontalOffset(
         offset, this.ExtentWidth - this.ViewportWidth));
     if ( this.m_scrollOffset.X != val ) {
         this.m_scrollOffset.X = val;
-        invalidateScrollView();
+        this.InvalidateScrollView();
     }
 }
 
@@ -166,7 +166,7 @@ SetVerticalOffset(
         offset, this.ExtentHeight - this.ViewportHeight));
     if ( this.m_scrollOffset.Y != val ) {
         this.m_scrollOffset.Y = val;
-        invalidateScrollView();
+        this.InvalidateScrollView();
     }
 }
 
@@ -251,7 +251,7 @@ MeasureOverride(
 //
 
 protected  virtual  double
-getPageScrollAmount(
+GetPageScrollAmount(
         double  vpSize,
         double  smSize)
 {
@@ -268,7 +268,7 @@ getPageScrollAmount(
 **/
 
 protected  virtual  void
-refreshViewport()
+RefreshViewport()
 {
     this.InvalidateVisual();
 }
@@ -280,10 +280,10 @@ refreshViewport()
 **/
 
 protected  virtual  void
-invalidateScrollView()
+InvalidateScrollView()
 {
     this.m_scrollOwner?.InvalidateScrollInfo();
-    refreshViewport();
+    this.RefreshViewport();
 }
 
 
