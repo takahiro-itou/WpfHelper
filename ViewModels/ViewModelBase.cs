@@ -17,11 +17,12 @@ using   System.Runtime.CompilerServices;
 using   System.Windows.Input;
 
 using   WpfHelper.Commands;
+using   WpfHelper.Data;
 
 
 namespace  WpfHelper.ViewModels  {
 
-public  class  ViewModelBase : INotifyPropertyChanged
+public  class  ViewModelBase : BindableBase
 {
 
 //========================================================================
@@ -106,7 +107,7 @@ RaiseCanExecuteChanged(
 /**   プロパティの変更通知イベントを発火させる。
 **
 **/
-protected  virtual  void
+protected  overrides  void
 RaisePropertyChanged(
         [CallerMemberName]  System.String?  propertyName = null)
 {
