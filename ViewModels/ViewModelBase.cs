@@ -63,7 +63,7 @@ public  event   PropertyChangedEventHandler?    PropertyChanged;
 **/
 
 protected  virtual  void
-checkCommandsCanExecute(
+CheckCommandsCanExecute(
         System.String?  propertyName)
 {
 }
@@ -74,7 +74,7 @@ checkCommandsCanExecute(
 **/
 
 protected  virtual  INotifyCanExecuteChanged
-getCommand(
+GetCommand(
         ICommand  command,
         [CallerArgumentExpression("command")] string  paramName = "")
 {
@@ -94,11 +94,11 @@ getCommand(
 **/
 
 protected  virtual  void
-raiseCanExecuteChanged(
+RaiseCanExecuteChanged(
         ICommand  command,
         [CallerArgumentExpression("command")] string  paramName = "")
 {
-    getCommand(command, paramName).raiseCanExecuteChanged();
+    GetCommand(command, paramName).RaiseCanExecuteChanged();
 }
 
 
@@ -107,12 +107,12 @@ raiseCanExecuteChanged(
 **
 **/
 protected  virtual  void
-raisePropertyChanged(
+RaisePropertyChanged(
         [CallerMemberName]  System.String?  propertyName = null)
 {
     PropertyChanged?.Invoke(
             this, new PropertyChangedEventArgs(propertyName));
-    checkCommandsCanExecute(propertyName);
+    CheckCommandsCanExecute(propertyName);
 }
 
 
