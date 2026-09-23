@@ -34,7 +34,6 @@ public  class  ViewModelBase : BindableBase
 /**   コンストラクタ。
 **
 **/
-
 public
 ViewModelBase()
 {
@@ -46,12 +45,6 @@ ViewModelBase()
 //    Properties.
 //
 
-//----------------------------------------------------------------
-/**   プロパティが変化したことを通知するイベント。
-**
-**/
-public  event   PropertyChangedEventHandler?    PropertyChanged;
-
 
 //========================================================================
 //
@@ -62,7 +55,6 @@ public  event   PropertyChangedEventHandler?    PropertyChanged;
 /**
 **
 **/
-
 protected  virtual  void
 CheckCommandsCanExecute(
         System.String?  propertyName)
@@ -73,7 +65,6 @@ CheckCommandsCanExecute(
 /**
 **
 **/
-
 protected  virtual  INotifyCanExecuteChanged
 GetCommand(
         ICommand  command,
@@ -93,7 +84,6 @@ GetCommand(
 /**
 **
 **/
-
 protected  virtual  void
 RaiseCanExecuteChanged(
         ICommand  command,
@@ -101,7 +91,6 @@ RaiseCanExecuteChanged(
 {
     GetCommand(command, paramName).RaiseCanExecuteChanged();
 }
-
 
 //----------------------------------------------------------------
 /**   プロパティの変更通知イベントを発火させる。
