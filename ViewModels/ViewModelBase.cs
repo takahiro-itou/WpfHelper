@@ -107,7 +107,7 @@ RaiseCanExecuteChanged(
 /**   プロパティの変更通知イベントを発火させる。
 **
 **/
-protected  overrides  void
+protected  override  void
 RaisePropertyChanged(
         [CallerMemberName]  System.String?  propertyName = null)
 {
