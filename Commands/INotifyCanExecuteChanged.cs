@@ -41,7 +41,7 @@ public  interface  INotifyCanExecuteChanged : ICommand
 **/
 
 public  void
-raiseCanExecuteChanged();
+RaiseCanExecuteChanged();
 
 
 }   //  End interface  INotifyCanExecuteChanged

@@ -78,6 +78,16 @@ CanExecute(object? parameter)
     return ( this.m_canExec?.Invoke(parameter) ?? true );
 }
 
+//----------------------------------------------------------------
+/**   CanExecuteChanged イベントを発生させる。
+**
+**/
+public  virtual  void
+RaiseCanExecuteChanged()
+{
+    CanExecuteChanged?.Invoke(this, EventArgs.Empty);
+}
+
 
 //========================================================================
 //
@@ -89,22 +99,6 @@ CanExecute(object? parameter)
 **
 **/
 public  event   EventHandler?   CanExecuteChanged;
-
-
-//========================================================================
-//
-//    Public Member Functions.
-//
-
-//----------------------------------------------------------------
-/**   CanExecuteChanged イベントを発生させる。
-**
-**/
-public  virtual  void
-raiseCanExecuteChanged()
-{
-    CanExecuteChanged?.Invoke(this, EventArgs.Empty);
-}
 
 
 //========================================================================

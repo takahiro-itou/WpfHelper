@@ -32,7 +32,7 @@ public  static  class  BrushCache
 //
 
 public  static  SolidColorBrush
-getBrush(Color  color)
+GetBrush(Color  color)
 {
     return  s_cache.GetOrAdd(color, c =>
         {

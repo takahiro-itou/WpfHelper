@@ -94,7 +94,7 @@ Execute(object? parameter)
     if (parameter is not null) {
         tparam = (parameter is T)
             ? (T)parameter
-            : convertFrom(parameter);
+            : ConvertFrom(parameter);
     }
     this.m_execute(tparam);
 }
@@ -109,7 +109,7 @@ Execute(object? parameter)
 **
 **/
 public  static  T
-convertFrom(object parameter)
+ConvertFrom(object parameter)
 {
     T?  tmp = (T?)s_typeConverter.ConvertFrom(parameter);
     if (tmp is T val) { return ( val ); }

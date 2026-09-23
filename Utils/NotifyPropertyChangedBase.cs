@@ -48,7 +48,7 @@ public  event   PropertyChangedEventHandler?    PropertyChanged;
 **
 **/
 protected  virtual  void
-raisePropertyChanged(
+RaisePropertyChanged(
         [CallerMemberName]  System.String?  propertyName = null)
 {
     PropertyChanged?.Invoke(

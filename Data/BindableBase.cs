@@ -47,7 +47,7 @@ SetValue<T>(
         return;
     }
     fieldVar = value;
-    raisePropertyChanged(propertyName);
+    RaisePropertyChanged(propertyName);
 }
 
 

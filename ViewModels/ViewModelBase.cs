@@ -17,11 +17,12 @@ using   System.Runtime.CompilerServices;
 using   System.Windows.Input;
 
 using   WpfHelper.Commands;
+using   WpfHelper.Data;
 
 
 namespace  WpfHelper.ViewModels  {
 
-public  class  ViewModelBase : INotifyPropertyChanged
+public  class  ViewModelBase : BindableBase
 {
 
 //========================================================================
@@ -33,7 +34,6 @@ public  class  ViewModelBase : INotifyPropertyChanged
 /**   コンストラクタ。
 **
 **/
-
 public
 ViewModelBase()
 {
@@ -45,12 +45,6 @@ ViewModelBase()
 //    Properties.
 //
 
-//----------------------------------------------------------------
-/**   プロパティが変化したことを通知するイベント。
-**
-**/
-public  event   PropertyChangedEventHandler?    PropertyChanged;
-
 
 //========================================================================
 //
@@ -61,9 +55,8 @@ public  event   PropertyChangedEventHandler?    PropertyChanged;
 /**
 **
 **/
-
 protected  virtual  void
-checkCommandsCanExecute(
+CheckCommandsCanExecute(
         System.String?  propertyName)
 {
 }
@@ -72,9 +65,8 @@ checkCommandsCanExecute(
 /**
 **
 **/
-
 protected  virtual  INotifyCanExecuteChanged
-getCommand(
+GetCommand(
         ICommand  command,
         [CallerArgumentExpression("command")] string  paramName = "")
 {
@@ -92,27 +84,24 @@ getCommand(
 /**
 **
 **/
-
 protected  virtual  void
-raiseCanExecuteChanged(
+RaiseCanExecuteChanged(
         ICommand  command,
         [CallerArgumentExpression("command")] string  paramName = "")
 {
-    getCommand(command, paramName).raiseCanExecuteChanged();
+    GetCommand(command, paramName).RaiseCanExecuteChanged();
 }
-
 
 //----------------------------------------------------------------
 /**   プロパティの変更通知イベントを発火させる。
 **
 **/
-protected  virtual  void
-raisePropertyChanged(
+protected  override  void
+RaisePropertyChanged(
         [CallerMemberName]  System.String?  propertyName = null)
 {
-    PropertyChanged?.Invoke(
-            this, new PropertyChangedEventArgs(propertyName));
-    checkCommandsCanExecute(propertyName);
+    base.RaisePropertyChanged(propertyName);
+    CheckCommandsCanExecute(propertyName);
 }
 
 
