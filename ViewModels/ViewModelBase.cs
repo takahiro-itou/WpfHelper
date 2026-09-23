@@ -100,8 +100,7 @@ protected  override  void
 RaisePropertyChanged(
         [CallerMemberName]  System.String?  propertyName = null)
 {
-    PropertyChanged?.Invoke(
-            this, new PropertyChangedEventArgs(propertyName));
+    base.RaisePropertyChanged(propertyName);
     CheckCommandsCanExecute(propertyName);
 }
 
