@@ -44,7 +44,7 @@ AbstractSimpleCommand(
         TDlgAct     execute,
         ExecPred?   canExec = null)
 {
-    this.m_execute  = execute ?? throw new ArgumentNullException(
+    this.m_execute  = execute ?? throw new System.ArgumentNullException(
             nameof(execute));
     this.m_canExec  = canExec;
 }
@@ -85,7 +85,7 @@ CanExecute(object? parameter)
 public  virtual  void
 RaiseCanExecuteChanged()
 {
-    CanExecuteChanged?.Invoke(this, EventArgs.Empty);
+    CanExecuteChanged?.Invoke(this, System.EventArgs.Empty);
 }
 
 

@@ -74,7 +74,7 @@ GetCommand(
         return ( raiseableCommand );
     }
 
-    throw new ArgumentException(
+    throw  new System.ArgumentException(
         $"指定されたコマンドは {nameof(INotifyCanExecuteChanged)} を"
         + $"実装していません。プロパティ名: {paramName}",
         paramName);
