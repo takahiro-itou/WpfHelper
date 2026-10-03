@@ -17,6 +17,10 @@
     <Compile Include="$(WpHpThisDir)Data/IntToBoolConverter.cs" />
 
     <Compile Include="$(WpHpThisDir)Utils/BrushCache.cs" />
+    <Compile
+        Include="$(WpHpThisDir)Utils/CallerArgumentExpressionAttribute.cs"
+        Condition="$(TargetFramework.StartsWith('net4'))"
+    />
     <Compile Include="$(WpHpThisDir)Utils/NotifyPropertyChangedBase.cs" />
 
     <Compile Include="$(WpHpThisDir)ViewModels/ViewModelBase.cs" />

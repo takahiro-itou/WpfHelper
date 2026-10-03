@@ -12,46 +12,22 @@
 **                                                                      **
 *************************************************************************/
 
-using   System.Collections.Generic;
-using   System.ComponentModel;
-using   System.Runtime.CompilerServices;
 
-using   WpfHelper.Utils;
+#if !NETCOREAPP
 
+namespace  System.Runtime.CompilerServices  {
 
-namespace  WpfHelper.Data  {
-
-//========================================================================
-//
-//    BindableBase  class
-//
-
-public  class  BindableBase : NotifyPropertyChangedBase
+[AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false, Inherited = false)]
+public  sealed  class  CallerArgumentExpressionAttribute : System.Attribute
 {
+    public string ParameterName { get; }
 
-//========================================================================
-//
-//    Protected Member Functions.
-//
-
-//----------------------------------------------------------------
-/**   プロパティの値をセットし変更を通知する。
-**
-**/
-protected  void
-SetValue<T>(
-    ref  T  fieldVar,
-    T       value,
-    [CallerMemberName]  System.String?  propertyName = null)
-{
-    if ( EqualityComparer<T>.Default.Equals(fieldVar, value)) {
-        return;
+    public CallerArgumentExpressionAttribute(string parameterName)
+    {
+        ParameterName = parameterName;
     }
-    fieldVar = value;
-    RaisePropertyChanged(propertyName);
 }
 
+}   //  End of namespace  System.Runtime.CompilerServices
 
-}   //  End of class  BindableBase
-
-}   //  End of namespace  WpfHelper.Data
+#endif
