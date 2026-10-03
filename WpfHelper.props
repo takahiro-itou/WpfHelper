@@ -18,7 +18,7 @@
 
     <Compile Include="$(WpHpThisDir)Utils/BrushCache.cs" />
     <Compile
-        Include="$(WpHpThisDir)CallerArgumentExpressionAttribute.cs"
+        Include="$(WpHpThisDir)Utils/CallerArgumentExpressionAttribute.cs"
         Condition="$(TargetFramework.StartsWith('net4'))"
     />
     <Compile Include="$(WpHpThisDir)Utils/NotifyPropertyChangedBase.cs" />
