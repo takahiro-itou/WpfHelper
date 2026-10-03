@@ -92,7 +92,7 @@ public  override  void
 Execute(object? parameter)
 {
     T tparam = default(T);
-    if (parameter is not null) {
+    if ( parameter != null ) {
         tparam = (parameter is T)
             ? (T)parameter
             : ConvertFrom(parameter);

@@ -18,6 +18,8 @@ using   System.Windows.Media;
 
 namespace  WpfHelper.Utils  {
 
+using   BrushDictionary = ConcurrentDictionary<Color, SolidColorBrush>;
+
 //========================================================================
 //
 //    BrushCache  class
@@ -52,7 +54,7 @@ GetBrush(Color  color)
 
 /**   キャッシュ。  **/
 private   static  readonly
-ConcurrentDictionary<Color, SolidColorBrush>    s_cache = new();
+BrushDictionary     s_cache = new BrushDictionary();
 
 
 }   //  End of class  BrushCache
