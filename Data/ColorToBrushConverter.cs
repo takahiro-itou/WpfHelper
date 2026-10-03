@@ -35,7 +35,7 @@ public  class  ColorToBrushConverter : IValueConverter
 public  object
 Convert(
         object      value,
-        Type        targetType,
+        System.Type targetType,
         object      parameter,
         CultureInfo culture)
 {
@@ -54,7 +54,7 @@ Convert(
 public  object
 ConvertBack(
         object      value,
-        Type        targetType,
+        System.Type targetType,
         object      parameter,
         CultureInfo culture)
 {

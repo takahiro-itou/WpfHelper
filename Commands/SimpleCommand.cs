@@ -12,8 +12,9 @@
 **                                                                      **
 *************************************************************************/
 
-using System.ComponentModel;
-using System.Windows.Input;
+using   System;
+using   System.ComponentModel;
+using   System.Windows.Input;
 
 
 namespace  WpfHelper.Commands  {
@@ -23,7 +24,7 @@ namespace  WpfHelper.Commands  {
 //    SimpleCommand  class.
 //
 
-public  class  SimpleCommand : AbstractSimpleCommand<Action>
+public  class  SimpleCommand : AbstractSimpleCommand<System.Action>
 {
 
 //----------------------------------------------------------------
@@ -32,7 +33,7 @@ public  class  SimpleCommand : AbstractSimpleCommand<Action>
 **/
 public
 SimpleCommand(
-        Action              execute,
+        System.Action       execute,
         Predicate<object?>? canExecute = null)
     : base(execute, canExecute)
 {
@@ -56,7 +57,7 @@ Execute(object? parameter)
 //    SimpleCommand<T>  class.
 //
 
-public  class  SimpleCommand<T> : AbstractSimpleCommand<Action<T> >
+public  class  SimpleCommand<T> : AbstractSimpleCommand<System.Action<T> >
     where T : struct
 {
 
@@ -71,7 +72,7 @@ public  class  SimpleCommand<T> : AbstractSimpleCommand<Action<T> >
 **/
 public
 SimpleCommand(
-        Action<T>           execute,
+        System.Action<T>    execute,
         Predicate<object?>? canExecute = null)
     : base(execute, canExecute)
 {

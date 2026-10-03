@@ -98,7 +98,7 @@ RaiseCanExecuteChanged()
 /**
 **
 **/
-public  event   EventHandler?   CanExecuteChanged;
+public  event   System.EventHandler?    CanExecuteChanged;
 
 
 //========================================================================
